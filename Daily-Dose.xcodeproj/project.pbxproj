@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37323FA724D22D17000251C5 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37323FA624D22D17000251C5 /* GoogleAppMeasurement.framework */; };
 		376DE2D724CEEBD90040E850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DE2D624CEEBD90040E850 /* AppDelegate.swift */; };
 		376DE2D924CEEBD90040E850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DE2D824CEEBD90040E850 /* SceneDelegate.swift */; };
 		376DE2DB24CEEBD90040E850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DE2DA24CEEBD90040E850 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37323FA624D22D17000251C5 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
 		376DE2D324CEEBD90040E850 /* Daily-Dose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Dose.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DE2D624CEEBD90040E850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		376DE2D824CEEBD90040E850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			files = (
 				37F9131924D1FE10001A5D88 /* GoogleMobileAds.framework in Frameworks */,
 				37F9131724D1F625001A5D88 /* StoreKit.framework in Frameworks */,
+				37323FA724D22D17000251C5 /* GoogleAppMeasurement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		37F9131524D1F625001A5D88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37323FA624D22D17000251C5 /* GoogleAppMeasurement.framework */,
 				37F9131824D1FE10001A5D88 /* GoogleMobileAds.framework */,
 				37F9131624D1F625001A5D88 /* StoreKit.framework */,
 			);
