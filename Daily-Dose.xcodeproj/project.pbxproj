@@ -13,6 +13,7 @@
 		376DE2DE24CEEBD90040E850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376DE2DC24CEEBD90040E850 /* Main.storyboard */; };
 		376DE2E024CEEBDA0040E850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 376DE2DF24CEEBDA0040E850 /* Assets.xcassets */; };
 		376DE2E324CEEBDA0040E850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376DE2E124CEEBDA0040E850 /* LaunchScreen.storyboard */; };
+		37F9131724D1F625001A5D88 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F9131624D1F625001A5D88 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		376DE2DF24CEEBDA0040E850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		376DE2E224CEEBDA0040E850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		376DE2E424CEEBDA0040E850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F9131624D1F625001A5D88 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F9131724D1F625001A5D88 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				376DE2D524CEEBD90040E850 /* Daily-Dose */,
 				376DE2D424CEEBD90040E850 /* Products */,
+				37F9131524D1F625001A5D88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				376DE2E424CEEBDA0040E850 /* Info.plist */,
 			);
 			path = "Daily-Dose";
+			sourceTree = "<group>";
+		};
+		37F9131524D1F625001A5D88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37F9131624D1F625001A5D88 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.paradabeltran.Daily-Dose";
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradabeltran.daily.dose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.paradabeltran.Daily-Dose";
+				PRODUCT_BUNDLE_IDENTIFIER = com.paradabeltran.daily.dose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
