@@ -6,6 +6,9 @@
 //  Copyright © 2020 Ezequiel Parada. All rights reserved.
 //
 
+typealias CompletionHandler = (_ success: Bool) -> ()
+
+
 import Foundation
 import StoreKit
 
@@ -15,6 +18,7 @@ class PurchaseManager: NSObject {
     
     var productsRequest: SKProductsRequest!
     var products = [SKProduct]()
+    var transactionComplete: CompletionHandler?
 
     func fetchProducts(){
         let productIDs = NSSet(object: IAP_REMOVE_ADS) as! Set<String>
@@ -23,13 +27,29 @@ class PurchaseManager: NSObject {
         productsRequest.start()
     }
     
-    func purchaseRemoveAds(){
+    func purchaseRemoveAds( onComplete: @escaping CompletionHandler ){
         if SKPaymentQueue.canMakePayments() && products.count > 0 {
+            transactionComplete = onComplete
             let removeAdsProduct = products[0]
             let payment = SKPayment(product: removeAdsProduct)
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().add(payment)
+        } else  {
+            onComplete(false)
         }
+    }
+    
+    
+    func restorePurchases( onComplete: @escaping CompletionHandler ){
+        
+        if SKPaymentQueue.canMakePayments() {
+            transactionComplete = onComplete
+            SKPaymentQueue.default().add(self)
+            SKPaymentQueue.default().restoreCompletedTransactions()
+        } else {
+            onComplete(false)
+        }
+    
     }
     
 }
@@ -49,20 +69,28 @@ extension PurchaseManager: SKProductsRequestDelegate, SKPaymentTransactionObserv
                 SKPaymentQueue.default().finishTransaction(transsaction)
                 if transsaction.payment.productIdentifier == IAP_REMOVE_ADS {
                     UserDefaults.standard.set(true, forKey: IAP_REMOVE_ADS)
+                    transactionComplete?(true)
                 }
                 
                 break
             case .failed:
                 SKPaymentQueue.default().finishTransaction(transsaction)
+                transactionComplete?(false)
                 break
             case .restored:
+               
+
                 SKPaymentQueue.default().finishTransaction(transsaction)
-                break
-            default:
-                break
+                if transsaction.payment.productIdentifier == IAP_REMOVE_ADS {
+                    UserDefaults.standard.set(true, forKey: IAP_REMOVE_ADS)
+                    
+                }
                 
+                 transactionComplete?(true)
+                break
             default:
-                <#code#>
+                transactionComplete?(false)
+                break
             }
         }
     }
